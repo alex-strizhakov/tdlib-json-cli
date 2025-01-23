@@ -5,7 +5,7 @@ project(TdlibJsonCli VERSION 1.0 LANGUAGES CXX)
 add_subdirectory(td)
 
 add_executable(tdlib_json_cli main.cpp)
-target_link_libraries(tdlib_json_cli PRIVATE Td::TdJsonStatic)
+target_link_libraries(tdlib_json_cli PRIVATE Td::TdJson)
 set_property(TARGET tdlib_json_cli PROPERTY CXX_STANDARD 11)
 set_target_properties(tdlib_json_cli
     PROPERTIES
