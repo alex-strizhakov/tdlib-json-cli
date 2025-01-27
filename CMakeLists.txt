@@ -2,10 +2,17 @@ cmake_minimum_required(VERSION 3.4 FATAL_ERROR)
 
 project(TdlibJsonCli VERSION 1.0 LANGUAGES CXX)
 
-add_subdirectory(td)
+# Specify where to find TDLib
+set(CMAKE_PREFIX_PATH "/app/tdlib")
+
+# Find TDLib
+find_package(Td 1.8.44 REQUIRED)
+
+# add_subdirectory(td)
 
 add_executable(tdlib_json_cli main.cpp)
 target_link_libraries(tdlib_json_cli
+    PRIVATE
     Td::TdJsonStatic
     /usr/lib/llvm-14/lib/libc++.a
     /usr/lib/llvm-14/lib/libc++abi.a
