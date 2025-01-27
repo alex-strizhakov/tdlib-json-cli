@@ -7,12 +7,14 @@ add_subdirectory(td)
 add_executable(tdlib_json_cli main.cpp)
 target_link_libraries(tdlib_json_cli
     Td::TdJsonStatic
+    /usr/lib/llvm-14/lib/libc++.a
+    /usr/lib/llvm-14/lib/libc++abi.a
     -lssl
     -lcrypto
-    -lc++abi
-    -lc++
     -static-libgcc
-    -static-libstdc++)
+    -static-libstdc++
+    -pthread
+    )
 set_property(TARGET tdlib_json_cli PROPERTY CXX_STANDARD 11)
 set_target_properties(tdlib_json_cli
     PROPERTIES
