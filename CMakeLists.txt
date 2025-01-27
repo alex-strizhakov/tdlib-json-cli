@@ -6,7 +6,7 @@ project(TdlibJsonCli VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_PREFIX_PATH "/app/tdlib")
 
 # Find TDLib
-find_package(Td 1.8.44 REQUIRED)
+find_package(Td REQUIRED)
 
 # add_subdirectory(td)
 
